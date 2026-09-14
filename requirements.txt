@@ -1,7 +1,7 @@
 Flask
-Flask-PyMongo
 pymongo
 gunicorn
 python-dotenv
 dnspython
 Flask-Bcrypt
+razorpay
