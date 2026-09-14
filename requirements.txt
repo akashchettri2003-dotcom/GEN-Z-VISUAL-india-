@@ -1,7 +1,0 @@
-Flask
-pymongo
-gunicorn
-python-dotenv
-dnspython
-Flask-Bcrypt
-razorpay
