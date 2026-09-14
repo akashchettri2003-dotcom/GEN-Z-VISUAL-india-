@@ -1,0 +1,4 @@
+<body style="padding:15px"><h1>Author Dashboard</h1>
+<form method="POST" action="/author/create_novel"><input name="title" placeholder="Novel Title" required><br><input name="cover" placeholder="Cover Image Link"><br><textarea name="desc" placeholder="Description"></textarea><br><input name="price" type="number" value="10" placeholder="Price per chapter coins"><br><button>Create Novel</button></form>
+<h2>My Novels</h2>{% for n in novels %}<div>{{n.title}} - <a href="/novel/{{n._id}}">Manage Chapters</a><form method="POST" action="/author/add_chapter/{{n._id}}"><input name="ch_title" placeholder="Chapter Title"><br><textarea name="ch_content" placeholder="Content"></textarea><br><button>Add Chapter</button></form></div>{% endfor %}
+</body>
