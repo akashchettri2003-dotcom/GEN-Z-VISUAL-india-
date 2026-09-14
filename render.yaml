@@ -1,0 +1,14 @@
+services:
+    - type: web
+    name: gen-z-visual-pro
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app
+    envVars:
+            - key: MONGODB_URI
+        sync: false
+            - key: RAZORPAY_KEY
+        sync: false
+            - key: RAZORPAY_SECRET
+        sync: false
