@@ -1,4 +1,24 @@
-<body style="padding:15px"><h1>Author Dashboard</h1>
-<form method="POST" action="/author/create_novel"><input name="title" placeholder="Novel Title" required><br><input name="cover" placeholder="Cover Image Link"><br><textarea name="desc" placeholder="Description"></textarea><br><input name="price" type="number" value="10" placeholder="Price per chapter coins"><br><button>Create Novel</button></form>
-<h2>My Novels</h2>{% for n in novels %}<div>{{n.title}} - <a href="/novel/{{n._id}}">Manage Chapters</a><form method="POST" action="/author/add_chapter/{{n._id}}"><input name="ch_title" placeholder="Chapter Title"><br><textarea name="ch_content" placeholder="Content"></textarea><br><button>Add Chapter</button></form></div>{% endfor %}
-</body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Author Dashboard - Gen-Z Visual</title>
+<style>
+body{background:#0a0a0a;color:white;font-family:sans-serif;padding:15px;margin:0}
+.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:16px;margin:15px 0}
+input,textarea,select{width:100%;background:#0f0f0f;border:1px solid #333;color:white;padding:12px;border-radius:10px;margin:8px 0;box-sizing:border-box}
+button{background:#00ff88;color:black;font-weight:bold;padding:12px 20px;border:none;border-radius:10px;width:100%;cursor:pointer}
+button:hover{background:#00e67a}
+h1{color:#00ff88}
+.novel-item{border-left:3px solid #00ff88;padding-left:12px}
+</style>
+</head>
+<body>
+
+<h1>✍️ Author Dashboard</h1>
+<p style="color:#888">Publish your Novel/Comic - Earn 70%</p>
+
+<div class="card">
+<h3>➕ Create New Novel / Comic</h3>
+<form method="POST" action="/author/create_novel">
+<input name="title" placeholder="
