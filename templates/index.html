@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{font-family:sans-serif;background:#0a0a0a;color:white;padding:15px} .card{background:#1a1a1a;padding:12px;margin:10px 0;border-radius:12px} a{color:#00ff88;text-decoration:none} button{background:#00ff88;color:black;padding:10px;border:none;border-radius:8px}</style></head><body>
+<h1>GEN-Z VISUAL</h1>
+{% if user %} Hi {{user.email}} | {{user.coins}} Coins | <a href="/logout">Logout</a> {% if user.role=='author' %} | <a href="/author">Author Dashboard</a>{% endif %} {% else %} <a href="/login">Login</a> <a href="/register">Register</a> {% endif %}
+<h2>Novels</h2>
+{% for n in novels %}<div class="card"><h3>{{n.title}}</h3><p>{{n.description[:100]}}</p><a href="/novel/{{n._id}}"><button>Read</button></a></div>{% endfor %}
+</body></html>
